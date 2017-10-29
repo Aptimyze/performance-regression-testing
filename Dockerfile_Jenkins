@@ -16,6 +16,9 @@ RUN apt-get clean && \
     unzip \
     maven
 
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk
+ENV PATH $JAVA_HOME/bin:$PATH
+
 # Install jmeter
 RUN mkdir /jmeter \
   && cd /jmeter/ \
