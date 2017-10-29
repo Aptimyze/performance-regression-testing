@@ -1,5 +1,15 @@
+# Jenkins
 jenkins_home/**
+!jenkins_home/jobs/**
+
+# InspectIT CMR
 inspectit_cmr/**
+!inspectit_cmr/config/default.xml
+!inspectit_cmr/ci/businessContext.xml
+!inspectit_cmr/ci/profiles/petClinic_Profile.xml
+
+# InfluxDB
 influxdb/**
+
+# Grafana
 grafana/**
-spring-petclinic-microservices/**

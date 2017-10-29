@@ -19,7 +19,7 @@ When you have found this line please copy paste the admin password to Jenkins an
 Go to the available plugins page (http://localhost:8090/pluginManager/available) in Jenkins and install the following two plugins:
 
 - Performance Plugin
-- Parameterized Performance plugins
+- Parameterized Trigger Plugin
 
 #### Import Jobs
 There are two jobs in this repository which have to be imported into Jenkins by copy pasting the folders into `jenkins_home/jobs`. After copying the jobs you have to restart Jenkins with `docker restart jenkins`. Afte restaring Jenkins you should now be able to see the following two new jobs in the Jenkins job overview:
@@ -38,12 +38,12 @@ The next step is to add the InfluxDB as your datasource to Grafana.
 ##### JMeter
 Click on the add data source icon and enter `JMeter` as name for this datasource. Next select the `InfluxDB` from the available database types list.
 For the HTTP settings select http://localhost:8086 as your datasource URL and use `Direct` as access method.
-We can skip the rest and go directly to the InfluxDB Details section where we will enter `JMeter` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
+We can skip the rest and go directly to the InfluxDB Details section where we will enter `jmeter` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
 
 #### InspectIT
 Click on the add data source icon and enter `InspectIT` as name for this datasource. Next select the `InfluxDB` from the available database types list.
 For the HTTP settings select http://localhost:8086 as your datasource URL and use `Direct` as access method.
-We can skip the rest and go directly to the InfluxDB Details section where we will enter `InspectIT` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
+We can skip the rest and go directly to the InfluxDB Details section where we will enter `inspectit` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
 
 #### Installing Dashboards
 Next we are going to import some Dashboards we need to see live JMeter data and InspectIT data. To do so go to the dashboard import page ( http://localhost:3000/dashboard/new?editview=import&orgId=1)
