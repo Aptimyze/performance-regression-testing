@@ -1,0 +1,5 @@
+jenkins_home/**
+inspectit_cmr/**
+influxdb/**
+grafana/**
+spring-petclinic-microservices/**
