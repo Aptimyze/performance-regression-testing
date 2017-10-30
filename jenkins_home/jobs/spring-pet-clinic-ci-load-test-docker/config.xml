@@ -144,12 +144,12 @@ curl http://&quot;$CMR_HOSTNAME&quot;:&quot;$CMR_PORT&quot;/rest/storage/stop</c
         <hudson.plugins.postbuildtask.TaskProperties>
           <logTexts>
             <hudson.plugins.postbuildtask.LogProperties>
-              <logText>Delete storage</logText>
+              <logText>Performance</logText>
               <operator>AND</operator>
             </hudson.plugins.postbuildtask.LogProperties>
           </logTexts>
-          <EscalateStatus>false</EscalateStatus>
-          <RunIfJobSuccessful>false</RunIfJobSuccessful>
+          <EscalateStatus>true</EscalateStatus>
+          <RunIfJobSuccessful>true</RunIfJobSuccessful>
           <script>#!/bin/bash&#xd;
 storageId=$(&lt;storageId.txt)&#xd;
 curl http://&quot;$CMR_HOSTNAME&quot;:&quot;$CMR_PORT&quot;/rest/storage/&quot;$storageId&quot;/delete</script>
