@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" common="false" active="true" default="false" id="9fe061c2-2fc5-442e-951a-c02e59fb41cb" name="Petclinic [base, services]" created-on="2017-05-31T16:31:39.510+02:00" updated-on="2017-06-01T11:26:18.815+02:00" imported-on="2017-09-18T13:27:48.219+02:00" revision="1" schemaVersion="6" xsi:noNamespaceSchemaLocation="..\schema\ciSchema.xsd">
+    <sensor-assignment-profile-data>
+        <timer-method-sensor-assignment starts-invocation="false" min-invocation-duration="0" charting="false" sensor-config-class="rocks.inspectit.shared.cs.ci.sensor.method.impl.TimerSensorConfig" method-name="*" constructor="false" public-mod="true" protected-mod="false" private-mod="false" default-mod="false" class-name="org.springframework.data.jpa.repository.JpaRepository" superclass="false" interface="true"/>
+        <timer-method-sensor-assignment starts-invocation="false" min-invocation-duration="0" charting="false" sensor-config-class="rocks.inspectit.shared.cs.ci.sensor.method.impl.TimerSensorConfig" method-name="getOwnerDetails" constructor="false" public-mod="true" protected-mod="true" private-mod="true" default-mod="true" class-name="org.springframework.samples.petclinic.api.boundary.web.ApiGatewayController" superclass="false" interface="false">
+            <context-captures>
+                <parameter-capture index="0" display-name="owner-id"/>
+                <return-capture display-name="owner-firstname">
+                    <paths>
+                        <path>firstName</path>
+                    </paths>
+                </return-capture>
+            </context-captures>
+        </timer-method-sensor-assignment>
+        <timer-method-sensor-assignment starts-invocation="false" min-invocation-duration="0" charting="false" sensor-config-class="rocks.inspectit.shared.cs.ci.sensor.method.impl.TimerSensorConfig" method-name="*" constructor="false" public-mod="true" protected-mod="false" private-mod="false" default-mod="false" class-name="org.springframework.samples.petclinic.*" superclass="false" interface="false" annotation="org.springframework.web.bind.annotation.RestController"/>
+        <exception-sensor-assignment class-name="java.lang.ClassCastException" superclass="false" interface="false"/>
+    </sensor-assignment-profile-data>
+</profile>
