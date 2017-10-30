@@ -45,7 +45,10 @@ services:
       - influxdb
       - inspectIT
   inspectit_cmr:
-    image: "inspectit/cmr"
+    build:
+      context: .
+      dockerfile:
+        Dockerfile_InspectIT_CMR
     container_name:
       inspectIT-CMR
     ports:

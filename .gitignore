@@ -1,8 +1,5 @@
 # InspectIT CMR
 inspectit_cmr/
-!inspectit_cmr/config/default.xml
-!inspectit_cmr/ci/businessContext.xml
-!inspectit_cmr/ci/profiles/petClinic_Profile.xml
 
 # Jenkins
 jenkins_home/**
