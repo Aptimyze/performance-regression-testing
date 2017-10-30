@@ -61,7 +61,7 @@ services:
       - ./inspectit_cmr/ci:/CMR/ci
       - ./inspectit/default.xml:/CMR/config/default.xml
       - ./inspectit/businessContext.xml:/CMR/ci/businessContext.xml
-      - ./inspectit/petClinic_Profile.xml:/CMR/ci/profiles/petClinic_Profile.xml
+      #- ./inspectit/petClinic_Profile.xml:/CMR/ci/profiles/petClinic_Profile.xml
 networks:
   influxdb:
   inspectIT:
