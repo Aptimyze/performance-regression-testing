@@ -52,7 +52,7 @@ This will start the following docker containers on your system:
 
 - jenkins
 - influxdb
-- inspectIT-CMR
+- inspectit_cmr
 - grafana
 
 To see logs about one container use `docker logs -f <container-name>`.

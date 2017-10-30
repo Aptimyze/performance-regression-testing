@@ -45,12 +45,9 @@ services:
       - influxdb
       - inspectIT
   inspectit_cmr:
-    build:
-      context: .
-      dockerfile:
-        Dockerfile_InspectIT_CMR
+    image: "inspectit/cmr"
     container_name:
-      inspectIT-CMR
+      inspectit_cmr
     ports:
       - 8182:8182
       - 9070:9070
@@ -62,6 +59,9 @@ services:
       - ./inspectit_cmr/storages:/CMR/storages
       - ./inspectit_cmr/config:/CMR/config
       - ./inspectit_cmr/ci:/CMR/ci
+      - ./inspectit/default.xml:/CMR/config/default.xml
+      - ./inspectit/businessContext.xml:/CMR/ci/businessContext.xml
+      - ./inspectit/petClinic_Profile.xml:/CMR/ci/profiles/petClinic_Profile.xml
 networks:
   influxdb:
   inspectIT:
