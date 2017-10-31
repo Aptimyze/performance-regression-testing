@@ -42,5 +42,7 @@ ENV JMETER_HOME /jmeter/apache-jmeter-3.3/
 # Add Jmeter to the Path
 ENV PATH $JMETER_HOME/bin:$PATH
 
-COPY jenkins_plugins.txt /usr/share/jenkins/plugins.txt
+COPY jenkins/jobs/* /jenkins_home/jobs/
+
+COPY jenkins/plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt

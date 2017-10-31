@@ -3,7 +3,6 @@ inspectit_cmr/
 
 # Jenkins
 jenkins_home/**
-!jenkins_home/jobs/spring-pet-clinic-ci-load-test-docker/config.xml
 
 # InfluxDB
 influxdb/**
