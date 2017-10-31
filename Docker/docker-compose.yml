@@ -30,7 +30,7 @@ services:
       dockerfile:
         Dockerfile_Jenkins
     volumes:
-      - ./jenkins_home:/var/jenkins_home
+      - ./jenkins/jobs:/var/jenkins_home/jobs
     ports:
       - 8080:8080
       - 8761:8761
