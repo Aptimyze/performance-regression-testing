@@ -54,14 +54,19 @@
           <description></description>
           <defaultValue>10</defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GIT_BRANCH</name>
+          <description></description>
+          <defaultValue>inspectit</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.5.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.2">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/birdy81/spring-petclinic-microservices.git</url>
+        <url>https://github.com/tzwickl/spring-petclinic-microservices.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -81,7 +86,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
-      <command>cmd /c call start_all_with_inspectIT.bat %INSPECTIT_AGENT_FOLDER%</command>
+      <command>git checkout origin/%GIT_BRANCH%&#xd;
+cmd /c call start_all_with_inspectIT.bat %INSPECTIT_AGENT_FOLDER%</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>jmeter -t jmeter/pet_clinic_load_test.jmx -n -JHOST=%SUT_HOST% -JPORT=%SUT_PORT% -JUSERS=2 -JRAMPUP=%JMETER_RAMPUP% -JLOOPCOUNT=2&#xd;
@@ -133,7 +139,7 @@ curl http://%CMR_HOSTNAME%:%CMR_PORT%/rest/storage/stop</command>
       <persistConstraintLog>false</persistConstraintLog>
       <sourceDataFiles>jmeter/pet_clinic_load_test_results.jtl</sourceDataFiles>
     </hudson.plugins.performance.PerformancePublisher>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.35.1">
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.35.2">
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
