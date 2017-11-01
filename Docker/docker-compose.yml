@@ -59,8 +59,6 @@ services:
       - ./inspectit_cmr/storages:/CMR/storages
       - ./inspectit_cmr/config:/CMR/config
       - ./inspectit_cmr/ci:/CMR/ci
-      - ./inspectit/default.xml:/CMR/config/default.xml
-      - ./inspectit/businessContext.xml:/CMR/ci/businessContext.xml
 networks:
   influxdb:
   inspectIT:
