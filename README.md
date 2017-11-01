@@ -81,10 +81,10 @@ Start the InspectIT UI and open the Analyze Perspective.
 Right click on the Local CMR and click on `Configure Repository`. Switch to the Database section and enable the write data to influxDB.
 
 ##### Import PetClinic profile
-Switch to the Configuration Interface Perspective. Now right click on the Local CMR and click on Import Configuration. Select and import the `petClinic_Profile.xml` located in the directory `Windows\inspectit\`.
+Switch to the Configuration Interface Perspective. Now right click on the Local CMR and click on Import Configuration. Select and import the `petClinic_Profile.xml` located in the directory `Inspectit`.
 
 ##### Import Business Context
-Replace the `businessContext.xml` in the `CMR\ci` directory with the one from `Windows\inspectit`.
+Replace the `businessContext.xml` in the `CMR\ci` directory with the one from `InspectIT`.
 
 After that restart `InspectIT CMR`.
 
@@ -98,15 +98,7 @@ for your platform to install docker-compose.
 ### 1.2.1 Configure Docker
 Before we can start the docker containers we have to adjust the computing resources dedicated to docker by going to the preferences page of docker. That is necessary as building and running all microservices consumes a lot of memory. So we should set the memory to at least 10GB and assign as many CPU Cores as possible.
 ### 1.2.2 Docker Compose
-To start the entire Demo check out this project and go inside the main directory where you can find the `docker-compose.yml` file.
-
-#### 1.2.3 Build
-Now run `docker-compose build` to build all docker containers.
-
-#### 1.2.4 Run
-After building the Demo Application start up all docker containers by
-running the command `docker-compose up`. To start the containers in the
-background use `docker-compose up -d`
+To start the entire Demo check out this project and go inside the `Docker` directory where you can find the `docker-compose.yml` file. To start the entire demo just execute the `./start_all.sh` script.
 
 This will start the following docker containers on your system:
 
@@ -117,10 +109,10 @@ This will start the following docker containers on your system:
 
 To see logs about one container use `docker logs -f <container-name>`.
 
-#### 1.2.5 Stop and Remove
-To stop all containers and remove them use `docker-compose down`
+#### 1.2.3 Stop and Remove
+To stop all containers and remove them use the `stop_all.sh` script.
 
-#### 1.2.6 Clear caches
+#### 1.2.6 Cleanup
 To clean up the docker caches and remove all unused containers use
 `docker system prune -a`.
 
@@ -129,6 +121,9 @@ Go to http://www.inspectit.rocks/ and download the latest InspectIT version for 
 Start the installation process by executing the `jar` file.
 Select your preferred installation directory. You are only required to install the `inspectIt UI` as the
 other two components will run inside the docker containers.
+
+##### Import PetClinic profile
+Switch to the Configuration Interface Perspective. Now right click on the Local CMR and click on Import Configuration. Select and import the `petClinic_Profile.xml` located in the directory `InspectIT\`.
 
 # 2.0 Tool Configuration
 ## 2.1 Grafana
@@ -168,3 +163,12 @@ Configure the build depending on your system and click on `Build`.
 
 ### 2.3.2 Console Output
 To follow the build and load test progress go inside the current build and click on `Console Output`.
+
+## 2.4 PetClinic
+If everything goes well, you can access the following services at given location:
+* Discovery Server - http://localhost:8761
+* Config Server - http://localhost:8888
+* AngularJS frontend (API Gateway) - http://localhost:8080
+* Customers, Vets and Visits Services - random port, check Eureka Dashboard
+* Tracing Server (Zipkin) - http://localhost:9411
+* Admin Server (Spring Boot Admin) - http://localhost:9090
