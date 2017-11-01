@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo chown -R 1000:1000 jenkins
+docker-compose build
 docker-compose up -d
 
 sleep 10s
