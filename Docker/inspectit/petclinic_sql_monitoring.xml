@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" common="false" active="true" default="false" id="55a64c77-4671-4a65-8418-1ec0bd07c6bf" name="Petclinic [sql monitoring]" created-on="2017-06-01T11:10:20.247+02:00" updated-on="2017-06-05T14:24:07.864+02:00" imported-on="2017-09-18T13:27:48.243+02:00" revision="1" schemaVersion="6" xsi:noNamespaceSchemaLocation="..\schema\ciSchema.xsd">
-    <sensor-assignment-profile-data>
-        <timer-method-sensor-assignment starts-invocation="false" min-invocation-duration="0" charting="true" sensor-config-class="rocks.inspectit.shared.cs.ci.sensor.method.impl.TimerSensorConfig" method-name="executeQuery" constructor="false" public-mod="true" protected-mod="false" private-mod="false" default-mod="false" class-name="java.sql.Statement" superclass="false" interface="true"/>
-    </sensor-assignment-profile-data>
-</profile>
