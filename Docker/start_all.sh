@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo chown -R 1000:1000 jenkins
+sudo chmod -R 777 jenkins
 docker-compose build
 docker-compose up -d
 
