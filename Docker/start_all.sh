@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo chmod -R 777 jenkins
-docker-compose build
 docker-compose up -d
 
 sleep 10s
