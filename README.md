@@ -128,20 +128,28 @@ Switch to the Configuration Interface Perspective. Now right click on the Local 
 # 2.0 Tool Configuration
 ## 2.1 Grafana
 Grafana can be accessed by going to http://localhost:3000 in your browser. To login use the default `admin` user with the default password `admin`.
-The next step is to add the InfluxDB as your datasource to Grafana.
+The next step is to setup Grafana
 
-### 2.1.1 Add Data Source
-#### JMeter
+#### 2.1.1 Automatic setup with Python script
+Install Python3 on your system and change to the `Grafana` directory.
+To install all necessary python modules run the `python3 setup.py install` script.
+After that you can start the setup script by running `python3 setup_grafana.py`.
+This will add all necessary datasources and imports all necessary dashboards.
+
+#### 2.1.2 Manual Setup with UI
+##### Add Data Source
+Add two datasources `JMeter` and `InspectIT`.
+###### JMeter
 Click on the add data source icon and enter `JMeter` as name for this datasource. Next select the `InfluxDB` from the available database types list.
 For the HTTP settings select http://localhost:8086 as your datasource URL and use `direct` as access method.
 We can skip the rest and go directly to the InfluxDB Details section where we will enter `jmeter` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
 
-### InspectIT
+###### InspectIT
 Click on the add data source icon and enter `InspectIT` as name for this datasource. Next select the `InfluxDB` from the available database types list.
 For the HTTP settings select http://localhost:8086 as Docker as your datasource URL and use `direct` as access method.
 We can skip the rest and go directly to the InfluxDB Details section where we will enter `inspectit` as Database and `admin` as user and password. Click on Save and Test and a green message should appear that the datasource is working.
 
-### 2.1.2 Installing Dashboards
+##### 2.1.2 Installing Dashboards
 Next we are going to import some Dashboards we need to see live JMeter data and InspectIT data. To do so go to the dashboard import page ( http://localhost:3000/dashboard/new?editview=import&orgId=1)
 and import the following two dashbards:
 
