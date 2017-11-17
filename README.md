@@ -1,4 +1,20 @@
-# WJAX Demonstration Application
+# Performance Regression Testing Demo
+
+## Abstract
+Principal setup of our Performance Regression Testing Demo (Architectural View):
+![PerformanceRegressionTesting](Images/PerformanceRegressionTesting.png)
+
+Principal setup of our Performance Regression Testing Demo (Tool View):
+![PerformanceRegressionTesting](Images/PerformanceRegressionTestingDemo.png)
+
+We will use the following tools in this demo:
+- Git
+- Jenkins
+- JMeter
+- InfluxDB
+- InspectIT
+- Grafana
+- Spring Petclinic Microservices
 
 # 1.0 Installation and Setup
 ## 1.1 Windows
