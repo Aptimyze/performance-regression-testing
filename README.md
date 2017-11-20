@@ -196,3 +196,17 @@ If everything goes well, you can access the following services at given location
 * Customers, Vets and Visits Services - random port, check Eureka Dashboard
 * Tracing Server (Zipkin) - http://localhost:9411
 * Admin Server (Spring Boot Admin) - http://localhost:9090
+
+## 2.4.1 Simulate Delay
+To introduce some sort of delay and see the impacts on the performance regeression test you can add the following piece of code to the `findAll` method of the OwnerResource which you can find at
+`spring-petclinic-customers-service/src/main/java/org/springframework/samples/petclinic/customers/web/OwnerResource.java`:
+
+```
+try {
+  Thread.sleep(500);
+} catch (Exception e) {
+  e.printStackTrace();
+}
+```
+This will add 500 milliseconds of delay to the `getAllOwners` business transaction.
+As a side note you shouldn't increase the delay over 1 second otherwise a timeout of the database transaction will occur.
