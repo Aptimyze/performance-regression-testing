@@ -57,7 +57,12 @@
         <hudson.model.StringParameterDefinition>
           <name>JMETER_JMX</name>
           <description></description>
-          <defaultValue>jmeter/pet_clinic_load_test_docker.jmx</defaultValue>
+          <defaultValue>jmeter/pet_clinic_load_test.jmx</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>INFLUX_HOST</name>
+          <description></description>
+          <defaultValue>influxdb</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -91,7 +96,7 @@
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-jmeter -t &quot;$JMETER_JMX&quot; -n -JHOST=&quot;$SUT_HOST&quot; -JPORT=&quot;$SUT_PORT&quot; -JUSERS=2 -JRAMPUP=&quot;$JMETER_RAMPUP&quot; -JLOOPCOUNT=2</command>
+jmeter -t &quot;$JMETER_JMX&quot; -n -JHOST=&quot;$SUT_HOST&quot; -JPORT=&quot;$SUT_PORT&quot; -JUSERS=2 -JRAMPUP=&quot;$JMETER_RAMPUP&quot; -JINFLUXDB_HOST=&quot;$INFLUX_HOST&quot; -JLOOPCOUNT=2</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
