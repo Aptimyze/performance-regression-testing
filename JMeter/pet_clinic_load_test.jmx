@@ -47,6 +47,11 @@
             <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="INFLUXDB_HOST" elementType="Argument">
+            <stringProp name="Argument.name">INFLUXDB_HOST</stringProp>
+            <stringProp name="Argument.value">${__P(INFLUXDB_HOST,localhost)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -963,7 +968,7 @@
             </elementProp>
             <elementProp name="influxDBHost" elementType="Argument">
               <stringProp name="Argument.name">influxDBHost</stringProp>
-              <stringProp name="Argument.value">localhost</stringProp>
+              <stringProp name="Argument.value">${INFLUXDB_HOST}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBPort" elementType="Argument">

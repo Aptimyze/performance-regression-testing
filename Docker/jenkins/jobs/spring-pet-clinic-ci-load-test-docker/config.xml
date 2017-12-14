@@ -109,7 +109,7 @@ storageId=&quot;${response:18:36}&quot;
 echo &quot;$storageId&quot; &gt; storageId.txt
 
 curl http://&quot;$CMR_HOSTNAME&quot;:&quot;$CMR_PORT&quot;/rest/storage/start?id=&quot;$storageId&quot;
-jmeter -t &quot;$JMETER_JMX&quot; -n -l jmeter/pet_clinic_load_test_results.jtl -Jjmeter.save.saveservice.output_format=xml -JHOST=&quot;$SUT_HOST&quot; -JPORT=&quot;$SUT_PORT&quot; -JUSERS=&quot;$JMETER_USERS&quot; -JRAMPUP=&quot;$JMETER_RAMPUP&quot; -JLOOPCOUNT=&quot;$JMETER_LOOPCOUNT&quot;
+jmeter -t &quot;$JMETER_JMX&quot; -n -l jmeter/pet_clinic_load_test_results.jtl -Jjmeter.save.saveservice.output_format=xml -JHOST=&quot;$SUT_HOST&quot; -JPORT=&quot;$SUT_PORT&quot; -JUSERS=&quot;$JMETER_USERS&quot; -JRAMPUP=&quot;$JMETER_RAMPUP&quot; -JINFLUXDB_HOST=&quot;$INFLUX_HOST&quot; -JLOOPCOUNT=&quot;$JMETER_LOOPCOUNT&quot;
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
